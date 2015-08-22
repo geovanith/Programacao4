@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author geovani.thimotheo
  */
 public class ProdutoDetalheServlet extends HttpServlet {
-    private Object integer;
+    
    
 
     /**
@@ -49,7 +49,7 @@ public class ProdutoDetalheServlet extends HttpServlet {
         int id;
         String idParam;
         idParam = request.getParameter("id");
-        id = integer.parseInt(idParam);
+        id = Integer.parseInt(idParam);
         
         
         IProdutoManager manager;
