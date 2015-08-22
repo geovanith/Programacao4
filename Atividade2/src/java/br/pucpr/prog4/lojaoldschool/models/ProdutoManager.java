@@ -15,11 +15,9 @@ import java.util.ArrayList;
  */
 public class ProdutoManager implements IProdutoManager {
 
-   
-   @Override
-    public List<Produto> obterTodos() {
-       List<Produto> produtos;
-       produtos = new ArrayList<>();
+   private static List<Produto> produtos;
+   static{
+        produtos = new ArrayList<>();
        Produto p1 = new Produto();
        
        
@@ -41,9 +39,23 @@ public class ProdutoManager implements IProdutoManager {
        produtos.add(p2);
        produtos.add(p3);
        
+   }
+
+   
+   @Override
+    public List<Produto> obterTodos() {
+      
        return produtos;
     }
 
-    
+    @Override
+    public Produto obterPorId(int id){
+      for(Produto p : produtos){
+          if(id == p.getId()){
+              return p;
+          }
+      } 
+      return null;
+    }
     
 }
